@@ -10,7 +10,7 @@ async function main() {
 
   const name = "Sias";
   const symbol = "SIAS";
-  const supply = ethers.utils.parseEther("10000");
+  const supply = ethers.utils.parseEther("1000");
 
   const sias = await Sias.deploy(name, symbol, supply);
   await sias.deployed();
@@ -18,11 +18,12 @@ async function main() {
   console.log("Sias Deployed to:", sias.address);
 
   const amount = ethers.utils.parseEther("50");
-  // await sias.transfer(voter1, amount, { from: executor });
-  // await sias.transfer(voter2, amount, { from: executor });
-  // await sias.transfer(voter3, amount, { from: executor });
-  // await sias.transfer(voter4, amount, { from: executor });
-  // await sias.transfer(voter5, amount, { from: executor });
+
+  await sias.transfer(voter1, amount, { from: executor });
+  await sias.transfer(voter2, amount, { from: executor });
+  await sias.transfer(voter3, amount, { from: executor });
+  await sias.transfer(voter4, amount, { from: executor });
+  await sias.transfer(voter5, amount, { from: executor });
 
   const minDelay = 1;
 
@@ -50,12 +51,26 @@ async function main() {
 
   console.log("SiasGovernor Deployed to ", siasGovernor.address);
 
-  const funds = ethers.utils.parseEther("0");
+  const funds = ethers.utils.parseEther("25");
 
   const siasTreasury = await SiasTreasury.deploy(executor, { value: funds });
   await siasTreasury.deployed();
 
+  await siasTreasury.transferOwnership(siasTimelock.address, {
+    from: executor,
+  });
+
   console.log("SiasTreasury deployed to ", siasTreasury.address);
+
+  const proposerRole = await siasTimelock.PROPOSER_ROLE();
+  const executorRole = await siasTimelock.EXECUTOR_ROLE();
+
+  await siasTimelock.grantRole(proposerRole, siasGovernor.address, {
+    from: executor,
+  });
+  await siasTimelock.grantRole(executorRole, siasGovernor.address, {
+    from: executor,
+  });
 }
 
 // We recommend this pattern to be able to use async/await everywhere

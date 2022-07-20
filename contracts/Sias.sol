@@ -11,7 +11,9 @@ contract Sias is ERC20, ERC20Permit, ERC20Votes {
         string memory _name,
         string memory _symbol,
         uint _intialSupply
-    ) ERC20(_name, _symbol) ERC20Permit(_name) {}
+    ) ERC20(_name, _symbol) ERC20Permit(_name) {
+        _mint(msg.sender, _intialSupply);
+    }
 
     function _afterTokenTransfer(address from, address to, uint amount) internal override(ERC20, ERC20Votes) {
         super._afterTokenTransfer(from, to, amount);

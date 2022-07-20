@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/sias/ashvau/blockchain/cast-vote/contracts/Sias.sol": {
-      "lastModificationDate": 1658326963161,
-      "contentHash": "26d91cc5fa3737b6425fe83580cbe045",
+      "lastModificationDate": 1658336193264,
+      "contentHash": "72774bd40b1efef6f2ce4a42b0ae9a08",
       "sourceName": "contracts/Sias.sol",
       "solcConfig": {
         "version": "0.8.9",
