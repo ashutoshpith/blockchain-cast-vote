@@ -2,4 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export { Sias__factory } from "./Sias__factory";
-export { SiasGoverner__factory } from "./SiasGoverner__factory";
+export { SiasGovernor__factory } from "./SiasGovernor__factory";
+export { SiasTimelock__factory } from "./SiasTimelock__factory";
+export { SiasTreasury__factory } from "./SiasTreasury__factory";

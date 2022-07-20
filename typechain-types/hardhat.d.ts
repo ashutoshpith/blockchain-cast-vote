@@ -21,6 +21,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IAccessControl__factory>;
     getContractFactory(
+      name: "Ownable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Ownable__factory>;
+    getContractFactory(
       name: "GovernorCompatibilityBravo",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.GovernorCompatibilityBravo__factory>;
@@ -28,6 +32,10 @@ declare module "hardhat/types/runtime" {
       name: "IGovernorCompatibilityBravo",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IGovernorCompatibilityBravo__factory>;
+    getContractFactory(
+      name: "GovernorCountingSimple",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernorCountingSimple__factory>;
     getContractFactory(
       name: "GovernorTimelockControl",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -109,9 +117,17 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Sias__factory>;
     getContractFactory(
-      name: "SiasGoverner",
+      name: "SiasGovernor",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SiasGoverner__factory>;
+    ): Promise<Contracts.SiasGovernor__factory>;
+    getContractFactory(
+      name: "SiasTimelock",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SiasTimelock__factory>;
+    getContractFactory(
+      name: "SiasTreasury",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SiasTreasury__factory>;
 
     getContractAt(
       name: "AccessControl",
@@ -124,6 +140,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IAccessControl>;
     getContractAt(
+      name: "Ownable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Ownable>;
+    getContractAt(
       name: "GovernorCompatibilityBravo",
       address: string,
       signer?: ethers.Signer
@@ -133,6 +154,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IGovernorCompatibilityBravo>;
+    getContractAt(
+      name: "GovernorCountingSimple",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernorCountingSimple>;
     getContractAt(
       name: "GovernorTimelockControl",
       address: string,
@@ -234,10 +260,20 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Sias>;
     getContractAt(
-      name: "SiasGoverner",
+      name: "SiasGovernor",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.SiasGoverner>;
+    ): Promise<Contracts.SiasGovernor>;
+    getContractAt(
+      name: "SiasTimelock",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SiasTimelock>;
+    getContractAt(
+      name: "SiasTreasury",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SiasTreasury>;
 
     // default types
     getContractFactory(

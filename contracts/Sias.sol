@@ -7,7 +7,11 @@ import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
 contract Sias is ERC20, ERC20Permit, ERC20Votes {
-    constructor () ERC20("Pith", "SIAS") ERC20Permit("Pith") {}
+    constructor (
+        string memory _name,
+        string memory _symbol,
+        uint _intialSupply
+    ) ERC20(_name, _symbol) ERC20Permit(_name) {}
 
     function _afterTokenTransfer(address from, address to, uint amount) internal override(ERC20, ERC20Votes) {
         super._afterTokenTransfer(from, to, amount);

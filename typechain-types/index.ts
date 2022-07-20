@@ -10,10 +10,14 @@ export type { AccessControl } from "./@openzeppelin/contracts/access/AccessContr
 export { AccessControl__factory } from "./factories/@openzeppelin/contracts/access/AccessControl__factory";
 export type { IAccessControl } from "./@openzeppelin/contracts/access/IAccessControl";
 export { IAccessControl__factory } from "./factories/@openzeppelin/contracts/access/IAccessControl__factory";
+export type { Ownable } from "./@openzeppelin/contracts/access/Ownable";
+export { Ownable__factory } from "./factories/@openzeppelin/contracts/access/Ownable__factory";
 export type { GovernorCompatibilityBravo } from "./@openzeppelin/contracts/governance/compatibility/GovernorCompatibilityBravo";
 export { GovernorCompatibilityBravo__factory } from "./factories/@openzeppelin/contracts/governance/compatibility/GovernorCompatibilityBravo__factory";
 export type { IGovernorCompatibilityBravo } from "./@openzeppelin/contracts/governance/compatibility/IGovernorCompatibilityBravo";
 export { IGovernorCompatibilityBravo__factory } from "./factories/@openzeppelin/contracts/governance/compatibility/IGovernorCompatibilityBravo__factory";
+export type { GovernorCountingSimple } from "./@openzeppelin/contracts/governance/extensions/GovernorCountingSimple";
+export { GovernorCountingSimple__factory } from "./factories/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple__factory";
 export type { GovernorTimelockControl } from "./@openzeppelin/contracts/governance/extensions/GovernorTimelockControl";
 export { GovernorTimelockControl__factory } from "./factories/@openzeppelin/contracts/governance/extensions/GovernorTimelockControl__factory";
 export type { GovernorVotes } from "./@openzeppelin/contracts/governance/extensions/GovernorVotes";
@@ -54,5 +58,9 @@ export type { DoubleEndedQueue } from "./@openzeppelin/contracts/utils/structs/D
 export { DoubleEndedQueue__factory } from "./factories/@openzeppelin/contracts/utils/structs/DoubleEndedQueue__factory";
 export type { Sias } from "./contracts/Sias";
 export { Sias__factory } from "./factories/contracts/Sias__factory";
-export type { SiasGoverner } from "./contracts/SiasGoverner";
-export { SiasGoverner__factory } from "./factories/contracts/SiasGoverner__factory";
+export type { SiasGovernor } from "./contracts/SiasGovernor";
+export { SiasGovernor__factory } from "./factories/contracts/SiasGovernor__factory";
+export type { SiasTimelock } from "./contracts/SiasTimelock";
+export { SiasTimelock__factory } from "./factories/contracts/SiasTimelock__factory";
+export type { SiasTreasury } from "./contracts/SiasTreasury";
+export { SiasTreasury__factory } from "./factories/contracts/SiasTreasury__factory";

@@ -2,4 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { Sias } from "./Sias";
-export type { SiasGoverner } from "./SiasGoverner";
+export type { SiasGovernor } from "./SiasGovernor";
+export type { SiasTimelock } from "./SiasTimelock";
+export type { SiasTreasury } from "./SiasTreasury";
