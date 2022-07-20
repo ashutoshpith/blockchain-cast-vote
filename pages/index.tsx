@@ -13,6 +13,7 @@ const Home: NextPage = () => {
 
 
   const getBalance = () => {
+
     console.log("balae", balance);
     
     setBal(balance as any)
