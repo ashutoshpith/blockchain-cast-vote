@@ -51,7 +51,7 @@ async function main() {
 
   console.log("SiasGovernor Deployed to ", siasGovernor.address);
 
-  const funds = ethers.utils.parseEther("25");
+  const funds = ethers.utils.parseEther("0");
 
   const siasTreasury = await SiasTreasury.deploy(executor, { value: funds });
   await siasTreasury.deployed();
