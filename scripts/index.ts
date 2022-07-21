@@ -14,17 +14,19 @@ async function main() {
   const [executor, proposer, voter1, voter2, voter3, voter4, voter5] =
     await ethers.provider.listAccounts();
 
-  const sias = Sias.attach(siasAddress);
-  const balance = await sias.balanceOf(executor);
-  const voter1Balance = await sias.balanceOf(voter1);
+  // const sias = Sias.attach(siasAddress);
+  // const balance = await sias.balanceOf(executor);
+  // const voter1Balance = await sias.balanceOf(voter1);
 
-  console.log(
-    "balance ",
-    balance,
-    balance.toString().length,
-    voter1Balance,
-    voter1Balance.toString().length
-  );
+  // console.log(
+  //   "balance ",
+  //   balance,
+  //   balance.toString().length,
+  //   voter1Balance,
+  //   voter1Balance.toString().length
+  // );
+
+  console.log("ad ", voter1);
 }
 
 main().catch((error) => {

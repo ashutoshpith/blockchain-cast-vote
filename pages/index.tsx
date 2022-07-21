@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import ConnectWallet from "../components/ConnectWallet";
 import Balance from '../components/Balance';
+import TransferFund from '../components/Transfer';
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         <br></br>
           <Balance />
         <br></br>
+        <TransferFund />
       
         <div>Fund In Treasury</div>
         <div>Release Fund from Treasury</div>
