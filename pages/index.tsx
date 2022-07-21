@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import ConnectWallet from "../components/ConnectWallet";
 import Balance from '../components/Balance';
 import TransferFund from '../components/Transfer';
+import EnsName from '../components/EnsName';
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,9 @@ const Home: NextPage = () => {
           <ConnectWallet />
         <br></br>
           <Balance />
+
+          <br></br>
+          <EnsName />
         <br></br>
         <TransferFund />
       

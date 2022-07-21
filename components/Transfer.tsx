@@ -6,6 +6,7 @@ const TransferFund: NextPage = () => {
     return (
         <div>
             Transfer Fund
+            <br></br>
             <button onClick={() => tranferWrite()}>Transfer</button>
         </div>
     )

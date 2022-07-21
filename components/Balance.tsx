@@ -14,7 +14,8 @@ const Balance: NextPage = () => {
   
     return (
         <div>
-             Balance: {bal}  
+             Balance: {bal}
+             <br></br>  
             <button onClick={getBalance}>Get Balance</button>
     
         </div>

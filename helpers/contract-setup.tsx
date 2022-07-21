@@ -61,7 +61,8 @@ export function useContractPipe() {
       addressOrName: SiasAddress,
       contractInterface: siasContractJson.abi,
       functionName: 'transfer',
-      args: ['0x846A9d5fc1Cd8Ace6714376918F141fF9dFAc445', amount, { from : "0x518c8416584dAA54Ca26736aab4914a84E62E2Cd"}]
+      args: ['0x846A9d5fc1Cd8Ace6714376918F141fF9dFAc445', amount],
+      overrides:  { from : "0x518c8416584dAA54Ca26736aab4914a84E62E2Cd"}
     })
 
     return {
