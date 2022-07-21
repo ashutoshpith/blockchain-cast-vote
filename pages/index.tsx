@@ -1,42 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState } from 'react'
-import { InitContract, WalletContract } from '../helpers'
 import styles from '../styles/Home.module.css'
+import ConnectWallet from "../components/ConnectWallet";
+import Balance from '../components/Balance';
 
 const Home: NextPage = () => {
-  const [walletBtnMsg, setWalletBtnMsg] = useState("Connect To Wallet")
-  const connectionRef =  WalletContract()
-  const [address, setAddress] = useState("")
-  const [bal, setBal] = useState(null)
-  const {balance} = InitContract(address)
-
-
-  const getBalance = () => {
-
-    console.log("balae", balance);
-    
-    setBal(balance as any)
-
-  }
- 
-  
-
-  const connectWalletHandler = async () => {
-    const windows = window as any;
-    const {address, connect}  = await  connectionRef
-     if(windows?.ethereum) {
-       connect();
-      if(address) {
-        setWalletBtnMsg("Wallet Connected")
-        setAddress(address)
-      }
-     } else {
-
-     }
-  }
-  
-
   return (
     <div className={styles.container}>
       <Head>
@@ -46,35 +14,24 @@ const Home: NextPage = () => {
       </Head>
 
    <main>
-   <br></br>
-    
-    <div>
+      <br></br>
+          <ConnectWallet />
+        <br></br>
+          <Balance />
+        <br></br>
       
-      <button onClick={connectWalletHandler}>  {walletBtnMsg}</button>
-    
-   
-    </div>
-    
-    <br></br>
-    <div>Address {address}</div>
-    <br></br>
-    <div>Balance: {bal} 
-    <button onClick={getBalance}>Get Balance</button>
-    </div>
-    <div>Fund In Treasury</div>
-    <div>Release Fund from Treasury</div>
-    <div>Create Proposal</div>
-    <div>Current Stage of Proposal</div>
-    <div>Proposal Deadline</div>
-    <div>Current Blocknumber</div>
-    <div>Number of Votes Reuired to pass </div>
-    <div>Cast A Vote</div>
-    <div>Vote For</div>
-    <div>Votes In Against</div>
-    <div>Votes In Favor</div>
-    <div>Votes In Neutral</div>
-
-
+        <div>Fund In Treasury</div>
+        <div>Release Fund from Treasury</div>
+        <div>Create Proposal</div>
+        <div>Current Stage of Proposal</div>
+        <div>Proposal Deadline</div>
+        <div>Current Blocknumber</div>
+        <div>Number of Votes Reuired to pass </div>
+        <div>Cast A Vote</div>
+        <div>Vote For</div>
+        <div>Votes In Against</div>
+        <div>Votes In Favor</div>
+        <div>Votes In Neutral</div>
    </main>
     </div>
   )
